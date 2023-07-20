@@ -56,3 +56,15 @@
    margin: 0 14px;
    font-size: 22px;
 }
+
+.div_user {
+   display: flex;
+   flex: row;
+   align-items: center;
+   gap: 1rem;
+}
+
+.div_user p {
+   color: #fff;
+   font-weight: 500;
+}
