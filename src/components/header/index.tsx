@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { PiSignOutBold } from "react-icons/pi";
 
 export function Header() {
    const { data: session, status } = useSession();
@@ -25,11 +26,17 @@ export function Header() {
             ) : session ? (
                <div className={styles.div_user}>
                   <p>Olá, {session?.user?.name}</p>
+                  <img
+                     className={styles.profile}
+                     src={session?.user?.image as string}
+                     alt="perfil"
+                  />
                   <button
-                     className={styles.loginButton}
+                     
+                     className={styles.sairButton}
                      onClick={() => signOut()}
                   >
-                     Sair
+                     <PiSignOutBold size={22} />
                   </button>
                </div>
             ) : (

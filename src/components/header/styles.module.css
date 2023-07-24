@@ -68,3 +68,25 @@
    color: #fff;
    font-weight: 500;
 }
+
+.profile {
+   height: 45px;
+   border-radius: 50%;
+}
+
+.sairButton {
+   background-color: transparent;
+   padding: 9px;
+   border-radius: 50%;
+   color: #fff;
+   border: 1.5px solid #fff;
+   cursor: pointer;
+   transition: all 0.4s;
+}
+
+.sairButton:hover {
+   transform: scale(1.08);
+   background-color: #fff;
+   color: #0f0f0f;
+   font-weight: bold;
+}
