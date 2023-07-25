@@ -14,6 +14,7 @@ import {
    where,
    getDoc,
    getDocs,
+   deleteDoc,
 } from "firebase/firestore";
 
 import { TextArea } from "../../components/textArea";
@@ -71,6 +72,17 @@ export default function Task({ item, allComments }: TaskProps) {
          console.log(err);
       }
    }
+   async function handleDeleteComment(id: string) {
+      try {
+         const docRef = doc(db, "comments", id);
+         await deleteDoc(docRef);
+
+         const deleteComments = comments.filter((item) => item.id !== id);
+         setComments(deleteComments);
+      } catch (err) {
+         console.log(err);
+      }
+   }
 
    return (
       <div className={styles.container}>
@@ -109,7 +121,10 @@ export default function Task({ item, allComments }: TaskProps) {
                   <div className={styles.headComment}>
                      <label className={styles.commentLabel}>{item.name}</label>
                      {item.user === session?.user?.email && (
-                        <button className={styles.buttonTrash}>
+                        <button
+                           onClick={() => handleDeleteComment(item.id)}
+                           className={styles.buttonTrash}
+                        >
                            <FaTrash size={18} color="#ea3140" />
                         </button>
                      )}
