@@ -30,13 +30,13 @@
    white-space: pre-wrap;
    width: 100%;
 }
-.comentsContainer {
+.commentsContainer {
    margin: 18px 0;
    width: 100%;
    max-width: 1024px;
 }
 
-.comentsContainer h2 {
+.commentsContainer h2 {
    margin: 14px 0;
 }
 
@@ -48,4 +48,38 @@
    background-color: #3183ff;
    font-size: 18px;
    cursor: pointer;
+}
+
+.button:disabled {
+   cursor: not-allowed;
+   background-color: rgb(49, 135, 255, 0.6);
+}
+
+.comment {
+   border: 1px solid #ddd;
+   padding: 14px;
+   border-radius: 4px;
+   margin-bottom: 14px;
+}
+
+.headComment {
+   display: flex;
+   align-items: center;
+}
+.commentLabel {
+   background-color: #ccc;
+   padding: 4px 8px;
+   margin-right: 8px;
+   border-radius: 4px;
+}
+
+.buttonTrash {
+   border: 0;
+   background-color: transparent;
+   cursor: pointer;
+}
+
+.comment p {
+   margin-top: 14px;
+   white-space: pre-wrap;
 }
