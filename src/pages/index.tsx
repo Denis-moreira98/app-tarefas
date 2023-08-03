@@ -61,6 +61,6 @@ export const getStaticProps: GetStaticProps = async () => {
          posts: postSnapshot.size || 0,
          comments: commentSnapshot.size || 0,
       },
-      revalidate: 90, // revalidada a cada 90 segundos
+      revalidate: 30, // revalidada a cada 30 segundos
    };
 };
