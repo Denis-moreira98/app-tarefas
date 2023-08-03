@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  <b> App Tarefas+ 🧑🏽‍💻📃
 
-## Getting Started
+### Projeto Tarefas+ é um TodoList, onde você cadastra suas tarefas. Mas possui funcionalidades a mais, como tornar as tarefas públicas ou privadas, podendo compartilhar as públicas, fazer login com autendicação do google.
 
-First, run the development server:
+## Funcionalidades:
+- Home: A página home possúi um conteúdo estático, onde os dados dos posts e comentários, serão atualizado a cada 90 segundos.
+- Login: Você pode fazer o login através da conta do google, após efetuar o login terá acesso ao Meu painel de tarefas;
+- Dashboard: No painel você poderá registrar novas tarefas, optando se vai torna-las públicas ou privadas. E após registrar, elas aparecerão logo abaixo em "Minhas tarefas", poderão ser removidas também;
+- Compartilhar tarefa (apenas tarefas públicas): Ao clicar no icon shared, você terá o link copiado, podendo sucessivamente mandar para alguém;
+- Detalhe da tarefa: Ao acessar uma tarefa pública, terá a opção de deixar um comentário, mas é necessário efetuar o login (Apenas o autor poderá apagar o próprio comentário).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Tecnologias utilizadas:
+- Nextjs para construção da interdace do usuário;
+- NextAuth biblioteca do Next, utilizada para fazer o login com autenticação do google;
+- CSS para estilizar;
+- Banco de dados Firebase, para guardar as tarefas e comentário cadastrados.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<hr>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+![home](https://github.com/Denis-moreira98/app-tarefas/assets/72985107/24685371-4508-4277-922b-311649d543fe)
+![home logado](https://github.com/Denis-moreira98/app-tarefas/assets/72985107/ff9b908f-d9d7-4f12-8760-5f038df8322e)
+![Dashboard](https://github.com/Denis-moreira98/app-tarefas/assets/72985107/1450c286-afe5-444b-a202-2a96f769f3dc)
+![detalhes ](https://github.com/Denis-moreira98/app-tarefas/assets/72985107/f6512d34-de0e-437d-99f6-51bdef686408)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
