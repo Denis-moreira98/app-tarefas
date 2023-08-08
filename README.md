@@ -15,7 +15,7 @@
 - CSS para estilizar;
 - Banco de dados Firebase, para guardar as tarefas e comentário cadastrados.
 
- ### [Deploy](https://app-tarefas-six.vercel.app/) 🚀
+
 
 <hr>
 
