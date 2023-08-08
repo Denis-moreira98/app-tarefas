@@ -18,6 +18,7 @@ import {
 } from "firebase/firestore";
 
 import { TextArea } from "../../components/textArea";
+import { toast } from "react-hot-toast";
 
 interface TaskProps {
    item: {
@@ -46,7 +47,7 @@ export default function Task({ item, allComments }: TaskProps) {
    async function handleComent(e: FormEvent) {
       e.preventDefault();
 
-      if (input === "") return;
+      if (input === "") return toast.error("Digite um cometário válido");
 
       if (!session?.user?.email || !session?.user?.name) return;
 
@@ -58,6 +59,7 @@ export default function Task({ item, allComments }: TaskProps) {
             name: session?.user.name,
             taskId: item.taskId,
          });
+         toast.success("Comentário enviado com sucesso!");
 
          const data = {
             id: docRef.id,
@@ -79,6 +81,7 @@ export default function Task({ item, allComments }: TaskProps) {
 
          const deleteComments = comments.filter((item) => item.id !== id);
          setComments(deleteComments);
+         toast.success("Comentário deletado com sucesso!");
       } catch (err) {
          console.log(err);
       }

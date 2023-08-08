@@ -21,6 +21,7 @@ import {
    deleteDoc,
 } from "firebase/firestore";
 import Link from "next/link";
+import { toast } from "react-hot-toast";
 
 interface HomeProps {
    user: {
@@ -75,7 +76,7 @@ export default function Dashboard({ user }: HomeProps) {
    async function handleRegistertask(e: FormEvent) {
       e.preventDefault();
       if (input === "") {
-         alert("Digite uma tarefa válida");
+         toast.error("Digite uma tarefa válida");
          return;
       }
       try {
@@ -85,6 +86,7 @@ export default function Dashboard({ user }: HomeProps) {
             user: user?.email,
             public: publicTask,
          });
+         toast.success("Tarefa registrada com sucesso!");
 
          setInput("");
          setPublicTask(false);
@@ -97,11 +99,12 @@ export default function Dashboard({ user }: HomeProps) {
       await navigator.clipboard.writeText(
          `${process.env.NEXT_PUBLIC_URL}/task/${id}`
       );
-      alert("Link copiado!");
+      toast.success("Link copiado!");
    }
    async function handleDeleteTask(id: string) {
       const docRef = doc(db, "tarefas", id);
       await deleteDoc(docRef);
+      toast.success("Tarefa deletada com sucesso!");
    }
 
    return (
