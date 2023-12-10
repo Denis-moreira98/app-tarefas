@@ -2,9 +2,15 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { PiSignOutBold } from "react-icons/pi";
+import { FormEvent } from "react";
 
 export function Header() {
    const { data: session, status } = useSession();
+
+   const loginClick = (e: FormEvent) => {
+      e.preventDefault();
+      signIn("google");
+   };
 
    return (
       <header className={styles.header}>
@@ -32,7 +38,6 @@ export function Header() {
                      alt="perfil"
                   />
                   <button
-                     
                      className={styles.sairButton}
                      onClick={() => signOut()}
                   >
@@ -40,10 +45,7 @@ export function Header() {
                   </button>
                </div>
             ) : (
-               <button
-                  className={styles.loginButton}
-                  onClick={() => signIn("google")}
-               >
+               <button className={styles.loginButton} onClick={loginClick}>
                   Acessar
                </button>
             )}
